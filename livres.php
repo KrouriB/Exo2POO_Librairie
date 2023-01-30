@@ -13,7 +13,7 @@ class Livres{
         $this->parution = $parution;
         $this->prix = $prix;
         $this->auteur = $auteur;
-        $this->auteur->ajoutLivre($this);
+        $this->auteur->ajoutLivre($this); // ajoute un livre dans une liste (dont la fonction se trouve dans l'autre fichier classe)
     }
 
     public function getTitre() {
