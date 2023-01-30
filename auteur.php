@@ -42,8 +42,8 @@ class Auteur{
             $display .= " pages / ";
             $display .= $unLivre->getPrix();
             $display .= " €";
-            echo $display;
         }
+        echo $display;
     }
 }
 
