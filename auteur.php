@@ -25,22 +25,22 @@ class Auteur{
         $this->livres[] = $leLivre;
     }
 
-    public function afficherBibliographie($lAuteur){
+    public function afficherBibliographie(){
         $display = "";
         $display .= "Livres de ";
-        $display .= getPrenom($lAuteur);
+        $display .= $this->getPrenom();
         $display .= " ";
-        $display .= getNom($lAuteur);
+        $display .= $this->getNom();
         $display .= "<br>";
         foreach ($this->livres as $unLivre){
             $display .= "<br>";
-            $display .= livres::getTitre($unLivre);
+            $display .= $unLivre->getTitre();
             $display .= " (";
-            $display .= livres::getParution($unLivre);
+            $display .= $unLivre->getParution();
             $display .= ") : ";
-            $display .= livres::getNbpages($unLivre);
+            $display .= $unLivre->getNbpages();
             $display .= " pages / ";
-            $display .= livres::getPrix($unLivre);
+            $display .= $unLivre->getPrix();
             $display .= " €";
             echo $display;
         }
