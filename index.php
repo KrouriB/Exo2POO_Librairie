@@ -37,6 +37,6 @@ $l1 = new Livres("Ca","1138","1986","20",$auteur);
 $l2 = new Livres("Simetierre","374","1983","15",$auteur);
 $l3 = new Livres("Le Fléau","823","1978","14",$auteur);
 $l4 = new Livres("Shining","447","1977","16",$auteur);
-Auteur::afficherBibliographie($auteur)
+$auteur->afficherBibliographie();
 
 ?>
