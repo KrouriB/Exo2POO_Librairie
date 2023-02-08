@@ -1,12 +1,12 @@
 <?php
 
 class Auteur{
-    private $prenom;
-    private $nom;
-    private $auteur;
+    private string $prenom;
+    private string  $nom;
+    private Auteur $auteur;
     private array $livres;
 
-    public function __construct($prenom, $nom){
+    public function __construct(string $prenom, string $nom){
         $this->prenom = $prenom;
         $this->nom = $nom;
         $this->livres=[];
@@ -25,23 +25,15 @@ class Auteur{
         $this->livres[] = $leLivre;
     }
 
+    public function __toString()
+    {
+        return $this->prenom." ".$this->nom;
+    }
+
     public function afficherBibliographie(){
-        $display = "";
-        $display .= "Livres de ";
-        $display .= $this->getPrenom();
-        $display .= " ";
-        $display .= $this->getNom();
-        $display .= "<br>";
+        $display = "Livres de $this :<br>";
         foreach ($this->livres as $unLivre){
-            $display .= "<br>";
-            $display .= $unLivre->getTitre();
-            $display .= " (";
-            $display .= $unLivre->getParution();
-            $display .= ") : ";
-            $display .= $unLivre->getNbpages();
-            $display .= " pages / ";
-            $display .= $unLivre->getPrix();
-            $display .= " €";
+            $display .= $unLivre;
         }
         echo $display;
     }

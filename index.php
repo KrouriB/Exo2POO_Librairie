@@ -15,6 +15,8 @@ Shining (1977) : 447 pages / 16 €<br></p>
 
 <?php
 
+// toString() est une fonction qui permet de renvoyer une chaine de caractere avec toute les information d'un objet afficher comme on le veux
+
 spl_autoload_register(function ($class_name) {
     require_once $class_name . '.php';
 });

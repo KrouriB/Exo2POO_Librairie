@@ -7,7 +7,7 @@ class Livres{
     private int $prix;
     private Auteur $auteur;
 
-    public function __construct($titre, $nbpages, $parution, $prix ,$auteur) {
+    public function __construct(string $titre, int $nbpages, int $parution, float $prix, Auteur $auteur) {
         $this->titre = $titre;
         $this->nbpages = $nbpages;
         $this->parution = $parution;
@@ -16,10 +16,10 @@ class Livres{
         $this->auteur->ajoutLivre($this); // ajoute un livre dans une liste (dont la fonction se trouve dans l'autre fichier classe)
     }
 
-    public function getTitre() {
+    public function getTitre(): string {
         return $this->titre;
     }
-    public function getNbpages() {
+    public function getNbpages(): int {
         return $this->nbpages;
     }
     public function getParution() {
@@ -30,6 +30,11 @@ class Livres{
     }
     public function getAuteur() {
         return $this->auteur;
+    }
+
+    public function __toString()
+    {
+        return $this->titre." (".$this->parution.") : ".$this->nbpages." pages / ".$this->prix." €<br>";
     }
 }
 
